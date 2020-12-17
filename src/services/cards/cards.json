@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Drita",
+    "surname": "Skeraj",
+    "createdAt": "2020-12-14T17:19:53.604Z",
+    "ownerId": "bdnlqhs1t0kioto9vp",
+    "_id": "bdnlqhs1t0kioto9vq",
+    "products": [
+      { "_id": "bp0idw6mgkim4cd9e", "createdAt": "2020-12-14T17:24:48.802Z" },
+      { "_id": "bp0idw8dckim3wlzb", "createdAt": "2020-12-14T17:49:33.870Z" }
+    ],
+    "total": 2
+  },
+  {
+    "name": "Vesa",
+    "surname": "Skeraj",
+    "createdAt": "2020-12-14T17:21:02.379Z",
+    "ownerId": "11",
+    "_id": "1",
+    "products": [
+      { "_id": "4", "createdAt": "2020-12-14T17:24:48.802Z" },
+      { "_id": "5", "createdAt": "2020-12-14T17:24:48.802Z" }
+    ],
+    "total": 2
+  },
+  {
+    "name": "Jeta",
+    "surname": "Skeraj",
+    "createdAt": "2020-12-14T17:21:09.710Z",
+    "ownerId": "bdnlqhs4ackiotpwlr",
+    "_id": "bdnlqhs4ackiotpwls",
+    "products": [],
+    "total": 0
+  },
+  {
+    "name": "Drita2",
+    "surname": "skeraj",
+    "createdAt": "2020-12-14T17:53:55.912Z",
+    "ownerId": "bdnlqhs3x8kiouw1qi",
+    "_id": "bdnlqhs3x8kiouw1qj",
+    "products": [],
+    "total": 0
+  }
+]
