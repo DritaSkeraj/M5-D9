@@ -1,6 +1,6 @@
 [
   {
-    "name": "Strive School",
+    "name": "prod1",
     "description": "asdsdas",
     "brand": "iphone",
     "price": "1233",
@@ -9,7 +9,7 @@
     "imageURL": "http://localhost:3001//img/products/bp0idw8dckim3wlzb.jpg"
   },
   {
-    "name": "enisdadas",
+    "name": "prod2",
     "description": "asddasdas",
     "brand": "iphone",
     "price": "1233",
@@ -18,7 +18,7 @@
     "imageURL": "http://localhost:3001//img/products/bp0idw2zckim3ygky.jpg"
   },
   {
-    "name": "Crime And Punishment",
+    "name": "book",
     "description": "must read",
     "brand": "cool brand",
     "price": "12",
@@ -27,7 +27,7 @@
     "imageURL": "http://localhost:3001//img/products/bp0idw2o4kim4974s.jpg"
   },
   {
-    "name": "adjijwdi",
+    "name": "prod4",
     "description": "best quality",
     "brand": "cool brand",
     "price": "133",

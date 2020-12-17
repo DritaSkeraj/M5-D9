@@ -6,6 +6,7 @@ const { writeFile, createReadStream } = require("fs-extra");
 const { readDB, writeDB } = require("../../lib/utilites");
 const { check, validationResult } = require("express-validator");
 const multer = require("multer");
+const { Transform } = require("json2csv")
 
 const router = express.Router();
 const productsFilePath = path.join(__dirname, "products.json");
@@ -188,5 +189,29 @@ router.put("/:id", async (req, res, next) => {
     next(error);
   }
 });
+
+router.get("/export/CSV", async(req, res, next) => {
+  try{
+    const source = createReadStream(productsFilePath)
+
+    const jsonToCsv = new Transform({
+      fields: ["name", "description", "brand", "price", "imageURL"],
+    })
+
+    res.setHeader("Content-Disposition", "attachment; filename=products.csv")
+
+    pipeline(source, jsonToCsv, res, err => {
+      if(err){
+        console.log(err);
+        next(err)
+      } else {
+        console.log("File transformed!")
+      }
+    })
+  } catch(error){
+    console.log(error);
+    next(error)
+  }
+})
 
 module.exports = router;

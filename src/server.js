@@ -5,6 +5,8 @@ const cors = require("cors")
 const cardsRouter = require("./services/cards")
 const productsRouter = require("./services/products")
 const reviewsRouter = require("./services/reviews")
+const xmlRouter = require("./services/xml")
+
 const {
   notFoundHandler,
   unauthorizedHandler,
@@ -30,6 +32,7 @@ server.use(express.static(publicFolderPath))
 server.use("/cards", cardsRouter)
 server.use("/products", productsRouter)
 server.use("/reviews", reviewsRouter)
+server.use("/xml", xmlRouter)
 
 // ERROR HANDLERS
 
