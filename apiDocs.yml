@@ -1,0 +1,120 @@
+openapi: 3.0.3
+info:
+  version: 1.0.0
+  title: Marketplace
+  description: buy/sell products
+servers:
+  - url: http://localhost:3002
+    description: Local server
+tags:
+  - name: cards
+    description: Endpoints related to cards
+  - name: products
+    description: Endpoints related to products
+  - name: reviews
+    description: Endpoints related to reviews
+  - name: xml
+    description: Endpoints related to xml
+paths:
+  /cards:
+    get:
+      tags:
+        - cards
+      summary: Returns a list of cards
+      description: lists all the cards of the db
+      responses:
+        "200":
+          description: A list of cards
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Card"
+        "404":
+          description: A not found error
+    post:
+      tags:
+        - cards
+      summary: Adds new card
+      description: adds another card in the db
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Card"
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  asin:
+                    type: string
+        '400':
+          description: Bad Request
+          content:
+            text/html:
+              schema:
+                type: string
+                example: 'Required fields missing'
+        "500":
+          description: Generic Server Error
+          content:
+            text/html:
+              schema:
+                type: string    
+                example: 'Generic Server Error'
+  /cards/{cardId}:
+    get:
+      tags:
+        - cards
+      summary: Returns a single card
+      description: Extendend description
+      parameters:
+        - in: path
+          name: cardId
+          schema:
+            type: string
+          description: "The id that needs to be fetched."
+          required: true
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Card"
+        '400':
+          description: Bad Request
+          content:
+            text/html:
+              schema:
+                type: string 
+        "404":
+          description: Not Found
+          content:
+            text/html:
+              schema:
+                type: string
+        "500":
+          description: Generic Server Error
+          content:
+            text/html:
+              schema:
+                type: string                 
+components:
+  schemas:
+    Card:
+      type: object
+      properties:
+        name:
+          type: string
+        surname:
+          type: string
+      required:
+        - name
+        - surname
+      
